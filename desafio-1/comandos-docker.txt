@@ -1,0 +1,5 @@
+# Execucao do container mysql
+docker run --name mysql-A -d -p 3306:3306 --mount type=bind,src=/home/vboxuser/Desktop/docker/data/desafio-1/mysql-A/,dst=/var/lib/mysql -e MYSQL_ROOT_PASSWORD=Senha123 mysql:5.7
+
+# Execucao do container apache
+docker run --name web-server -dt -p 80:80 --mount type=bind,src=/home/vboxuser/Desktop/docker/data/desafio-1,dst=/app/ webdevops/php-apache:alpine-php7
